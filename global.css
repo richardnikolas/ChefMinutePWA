@@ -18,11 +18,6 @@
     font-weight: normal;
 }
 
-option:active {
-    color: var(--dark-gray);
-    background-color: var(--yellow);
-}
-
 /* Splash Screen */
 
 .splash {
