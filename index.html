@@ -1,13 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>replit</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>Chef Minute</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="manifest"
+      href="./manifest.webmanifest"
+      crossorigin="use-credentials"
+    />
+    <link rel="icon" type="image/png" href="./assets/icons/favicon.ico" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Chef Minute" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/icons/apple-icon-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/icons/apple-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/icons/apple-icon-114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/icons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/icons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-icon-180x180.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./material-icons.css" />
+
+    <script src="./chefminute.js"></script>
   </head>
+
   <body>
-    Hello world
-    <script src="script.js"></script>
+    <div id="splashPage" class="splash">
+      <img src="assets/logo-splash.png" alt="App Logo" id="logoSplash" />
+    </div>
+
+    <div id="signUpPage" class="signUpScreen hidden">
+      <section class="signUpHeader">
+        <img src="assets/logo-circle.png" alt="App Circle Logo" id="logoSignUp" />
+        <h2>Sign Up</h2>
+      </section>
+
+      <section class="signUpForm">
+        <div class="formField">
+          <label for="inputName">Name</label>
+          <input id="inputName" type="text" autocomplete="off" />
+        </div>
+
+        <div class="formField">
+          <label for="inputEmail">Email</label>
+          <input id="inputEmail" type="email" autocomplete="off" />
+        </div>
+
+        <div class="formField">
+          <label for="inputChefLevel">Chef Level</label>
+          <select id="inputChefLevel" name="chefLevel">
+            <option value="beginner">Beginner</option>
+            <option value="medium">Medium</option>
+            <option value="expert">Expert</option>
+            <option value="master">Master</option>
+          </select>
+        </div>
+
+        <div class="formField">
+          <label for="inputFavoriteCuisine">Favorite Cuisine</label>
+          <select id="inputFavoriteCuisine" name="favoriteCuisine">
+            <option value="brazilian">Brazilian</option>
+            <option value="italian">Italian</option>
+            <option value="french">French</option>
+            <option value="japanese">Japanese</option>
+            <option value="mexican">Mexican</option>
+            <option value="thai">Thai</option>
+            <option value="greek">Greek</option>
+            <option value="indian">Indian</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="btnSection">
+        <button id="signUpSubmit" class="getStartedBtn" onclick="saveUserAndContinue()">
+          Get Started
+        </button>
+      </section>
+    </div>
+
+    <div id="homePage" class="homeScreen hidden">
+      <section class="homeHeader">
+        <span class="material-icons orange md-36">menu</span>
+        <p class="greeting"><script>getGreeting()</script></p>
+
+        <span class="material-icons orange md-36 profileBtn">person</span>
+      </section>
+
+      <section class="searchSection">
+        <h1>What do you want<br/>to <span class="textOrange">cook</span> today?</h1>
+
+        <div class="formField">
+          <input id="searchInput" type="text" autocomplete="off" placeholder="Search here..." />
+        </div>
+      </section>
+
+      <section class="underConstruction">
+        <h1>We're still creating this section...<br/>Wait until the next Project</h1>
+        <div style="display: flex; justify-content: center; margin-top: 20px;">
+          <span class="material-icons orange md-100">devices</span>
+          <span class="material-icons orange md-100">settings_ethernet</span>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
